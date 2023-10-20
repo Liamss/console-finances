@@ -103,14 +103,33 @@ console.log("--------------------");
 
 let totalMonths = finances.length;
 
-console.log("Total Months of Data " + finances.length); 
+console.log("Total Months of Data: " + finances.length); 
 
-// Net total profit / loss
+
+// 1. Net total profit / loss
 
 let totalProfitLoss = 0;
 for (let i = 0; i < totalMonths; i++) {
   totalProfitLoss += finances[i][1]
 }
 
-console.log("Total $" + totalProfitLoss); 
+console.log("Total: $" + totalProfitLoss); 
 
+// 2. Change in Profit / Loss : Presenting Average Change
+
+let totalChange = 0;
+let averageChange = 0;
+for (let i = 1; i < totalMonths; i++) {
+  const currentProfitLoss = finances [i][1];
+  const previousProfitLoss = finances [i - 1][1];
+  const change = currentProfitLoss - previousProfitLoss;
+  totalChange += change;
+}
+
+averageChange = totalChange / (totalMonths - 1);
+
+// Presents number as two decimals places, readme says not to show a currency for this one so instead shows the full precise number
+
+averageChange = averageChange.toFixed(2);
+
+console.log("Average Change:" + averageChange)
