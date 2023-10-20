@@ -133,3 +133,28 @@ averageChange = totalChange / (totalMonths - 1);
 averageChange = averageChange.toFixed(2);
 
 console.log("Average Change:" + averageChange)
+
+// 3 & 4 Greatest Increase & Decrease 
+
+let greatestIncrease = { date: '', amount: 0};
+let greatestDecrease = { date: '', amount: 0};
+  for (let i = 1; i < totalMonths; i++) {
+  const currentProfitLoss = finances [i][1];
+  const previousProfitLoss = finances [i - 1][1];
+  const change = currentProfitLoss - previousProfitLoss;
+
+  if (change > greatestIncrease.amount) {
+    greatestIncrease.date = finances [i][0];
+    greatestIncrease.amount = change;
+  }
+
+  if (change < greatestDecrease.amount) {
+    greatestDecrease.date = finances [i][0]
+    greatestDecrease.amount = change;
+  }
+
+}
+
+console.log ("Greatest Increase in Profits/Losses: " + greatestIncrease.date + " ($" + greatestIncrease.amount +")")
+
+console.log ("Greatest Decrease in Profits/Loss: " + greatestDecrease.date + " ($" + greatestDecrease.amount + ")")
