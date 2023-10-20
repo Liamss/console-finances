@@ -1,4 +1,4 @@
-console.log ("Challenge 4 - Financial Analysis using JS")
+console.log ("Challenge 4")
 
 // Provided Dataset 
 
@@ -91,10 +91,26 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
+// Console Intro
 
-// variables for financial analysis
+console.log("-----------");
+
+console.log ("Financial Analysis");
+
+console.log("--------------------");
+
+// Total Months
 
 let totalMonths = finances.length;
-console.log("Total Months of Data " + finances.length);
 
+console.log("Total Months of Data " + finances.length); 
+
+// Net total profit / loss
+
+let totalProfitLoss = 0;
+for (let i = 0; i < totalMonths; i++) {
+  totalProfitLoss += finances[i][1]
+}
+
+console.log("Total $" + totalProfitLoss); 
 
