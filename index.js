@@ -105,7 +105,6 @@ let totalMonths = finances.length;
 
 console.log("Total Months of Data: " + finances.length); 
 
-
 // 1. Net total profit / loss
 
 let totalProfitLoss = 0;
@@ -158,3 +157,9 @@ let greatestDecrease = { date: '', amount: 0};
 console.log ("Greatest Increase in Profits/Losses: " + greatestIncrease.date + " ($" + greatestIncrease.amount +")")
 
 console.log ("Greatest Decrease in Profits/Loss: " + greatestDecrease.date + " ($" + greatestDecrease.amount + ")")
+
+// Analysis Ends
+
+console.log("--------------------");
+
+console.log ("For further analysis, please contact via https://github.com/Liamss")
